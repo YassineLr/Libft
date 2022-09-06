@@ -1,12 +1,4 @@
 #include "libft.h"
-{
-    int        i;
-
-    i = 0;
-    while (str[i])
-          i++;
-    return (i);
-}
 
 char *ft_strncat(char *dest, const char *src, size_t n)
 {

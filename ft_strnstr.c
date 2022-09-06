@@ -1,4 +1,5 @@
 #include "libft.h"
+
 char *ft_strnstr(const char *src, const char *to_find, size_t n)
 {
     int    i;
