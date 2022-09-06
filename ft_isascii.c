@@ -6,3 +6,7 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
+/*int main()
+{
+	printf("%d",ft_isascii(143));
+}*/

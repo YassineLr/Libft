@@ -6,6 +6,10 @@ int		strcount(char const *s, char c)
 	int count;
 
 	i = 0;
+	while (s[i] == c)
+	{
+		i++;
+	}
 	while (s[i])
 	{
 		if(s[i] == c && s[i+1] != c && s[i+1] != '\0')
