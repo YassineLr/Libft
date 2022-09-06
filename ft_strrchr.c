@@ -26,9 +26,8 @@ char *ft_strrchr(const char *str, int ch)
         {
             if (ft_check(str,c,i+1) == 0)
             {
-            return (str+i);
+            return ((char*)str+i);
             }
-            
         }
         i++;
     }

@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char		*ft_strjoin(char *s1, char *s2)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	n;
 	size_t	m;
@@ -8,8 +8,8 @@ char		*ft_strjoin(char *s1, char *s2)
 	char	*ch;
 
 	i = 0;
-	n = ft_strlen(s1);
-	m = ft_strlen(s2);
+	n = strlen(s1);
+	m = strlen(s2);
 	ch = (char *)malloc( m + n + 1);
 	while (i<n)
 	{

@@ -2,15 +2,15 @@
 
 char *ft_strnstr(const char *src, const char *to_find, size_t n)
 {
-    int    i;
-    int    j;
-    int    s;
+    size_t    i;
+    size_t    j;
+    size_t    s;
 
     i = 0;
     j = 0;
     s = ft_strlen(to_find) + 1;
     if(!to_find[j])
-        return(src);
+        return((char *)src);
     while (src[i] && i<n)
     {
       j = 0;
@@ -19,12 +19,11 @@ char *ft_strnstr(const char *src, const char *to_find, size_t n)
           j++;
             while (src[i+j] == to_find[j])
             {
-                src[i+j] == to_find[j];
                 j++;
             }
             if (j == s)
             {
-                return(src+i);
+                return((char *)src+i);
             }
         }
         i++;

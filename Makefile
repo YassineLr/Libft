@@ -1,46 +1,36 @@
-SRC = ft_strchr ft_strlen ft_putchar_fd \
-      ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
-      ft_strlcpy ft_strlcat ft_strdup ft_memset \
-      ft_bzero ft_memcmp ft_memcpy ft_memmove \
-      ft_isascii ft_isdigit ft_isalpha ft_isalnum \
-      ft_isprint ft_toupper ft_tolower ft_atoi \
-      ft_calloc ft_strjoin ft_strnstr ft_memccpy \
-      ft_memchr ft_strncmp ft_substr ft_itoa \
-      ft_split ft_strtrim ft_strrchr \
-      additional/ft_strmap additional/ft_strmapi \
-      additional/ft_striter additional/ft_striteri \
-      additional/ft_putchar additional/ft_putstr \
-      additional/ft_putnbr additional/ft_putendl
+SRCS = ft_strchr.c ft_strlen.c ft_putchar_fd.c \
+      ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+      ft_strlcpy.c ft_strlcat.c ft_strdup.c ft_memset.c \
+      ft_bzero.c ft_memcmp.c ft_memcpy.c ft_memmove.c \
+      ft_isascii.c ft_isdigit.c ft_isalpha.c ft_isalnum.c \
+      ft_isprint.c ft_toupper.c ft_tolower.c ft_atoi.c \
+      ft_calloc.c ft_strjoin.c ft_strnstr.c \
+      ft_memchr.c ft_strncmp.c ft_substr.c \
+      ft_split.c ft_strtrim.c ft_strrchr.c \
+      ft_strmapi.c \
 
-OBJ = $(SRC:=.o)
-BOBJ = $(BSRC:=.o)
-INC = libft.h
-NAME = libft.a
-AR = ar -rc
-RM = rm -f
+OBJS = ${SRCS:.c=.o}
+
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
 
-%.o : %.c
-	@$(CC) $(FLAGS) -c $< -o $@ -I $(INC)
+CFLAGS = -Wall -Wextra -Werror -I ./includes
 
-all: $(NAME)
+NAME = libft.a
 
-$(NAME): $(OBJ)
-	@$(AR) $(NAME) $(OBJ)
-	@$(ALERT) "$(GREEN)Compiled Successfully ^_^$(DEFAULT)"
+.c.o:
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+all: ${NAME}
+	
+${NAME}: ${OBJS}
+	ar rcs ${NAME} ${OBJS}
 
 clean:
-	@$(RM) $(OBJ) $(BOBJ)
-	@$(ALERT) "$(GREEN)Object files deleted ^_^$(DEFAULT)"
+	rm -rf ${OBJS}
 
 fclean: clean
-	@$(RM) $(NAME)
-	@$(ALERT) "$(GREEN)libft.a deleted ^_^$(DEFAULT)"
+	rm -rf ${NAME}
 
-re: re_alert fclean all
+re: fclean all
 
-re_alert:
-	@$(ALERT) "$(YELLOW)Restarting$(DEFAULT)"
-
-.PHONY: clean fclean re
+.PHONY: all clean fclean re

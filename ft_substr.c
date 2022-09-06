@@ -9,8 +9,8 @@ int        Min(int a, int b)
 
 char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
-    int        i;
-    int        n;
+    size_t        i;
+    size_t       n;
     char    *t__t;
 
     i = 0;

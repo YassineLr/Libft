@@ -16,3 +16,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+/*
+int main()
+{
+	char s1[]="yassine";
+	char	s2[]="wadie";
+	printf("%s\n",ft_memcpy(s1,s2,strlen(s1)));
+	printf("%s",memcpy(s1,s2,strlen(s1)));
+}
+*/

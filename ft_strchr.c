@@ -17,3 +17,9 @@ char *ft_strchr(const char *str, int ch )
 	}
 	return(NULL);
 }
+
+int	main()
+{
+	char str[]="future is loading !";
+	printf("%s",strchr(str,103));
+}
