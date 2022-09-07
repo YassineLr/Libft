@@ -53,4 +53,12 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strmap(const char *s, char (*f)(char));
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 
+// Bonus
+
+typedef struct  s_list
+{
+    void	*content;
+	struct	s_list	*next;	
+}	t_list;
+
 #endif
