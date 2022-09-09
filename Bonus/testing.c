@@ -1,12 +1,24 @@
-//#include "../libft.h"
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   testing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/08 14:36:31 by ylarhris          #+#    #+#             */
+/*   Updated: 2022/09/08 14:36:31 by ylarhris         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../libft.h"
+/*#include <stdio.h>
 #include<stdlib.h>
 
 typedef struct  s_list
 {
     void	*content;
 	struct	s_list	*next;	
-}	t_list;
+}	t_list;*/
 
 // creation of a linked list
 
@@ -58,6 +70,7 @@ void    shown(t_list **lst)
     while (courant)
     {
         printf("%s",courant -> content);
+		printf("%d",(*courant) . content);
         courant = courant -> next;
     }
 }
@@ -79,6 +92,26 @@ int		ft_lstsize(t_list *lst)
 	return (size);
 }
 
+// Delete
+
+#include "..\libft.h"
+
+void	del(void *t__t)
+{
+	free(t__t->content);
+}
+
+void	ft_lstdelone(t_list *lst, void(*del)(void*))
+{
+	t_list	*courant;
+
+	courant = lst;
+	while (courant)
+	{
+		(*del)(courant->content);
+		courant = courant -> next;
+	}
+
 // testing ...
 
 int main()
@@ -97,5 +130,6 @@ int main()
     ft_lstadd_back(&t__t,back);
     shown(&t__t);
     printf("%d",ft_lstsize(t__t));
+	ft_lstdelone(t__t,(*del)(void*));
 
 }
