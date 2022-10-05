@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/05 16:35:23 by ylarhris          #+#    #+#             */
+/*   Updated: 2022/10/05 16:36:17 by ylarhris         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_atoi(const char *s)
 {
 	int	res;
-	int i;
+	int	i;
 	int	sign;
 
 	res = 0;
@@ -16,7 +28,7 @@ int	ft_atoi(const char *s)
 		sign *= (-1);
 		i++;
 	}
-	else if(s[i] == '+')
+	else if (s[i] == '+')
 		i++;
 	while (s[i] <= '9' && s[i] >= '0')
 	{
@@ -25,9 +37,4 @@ int	ft_atoi(const char *s)
 		i++;
 	}
 	return (sign * res);
-}
-int main()
-{
-	char str[]="--12456";
-	printf("%d",ft_atoi(str));
 }
