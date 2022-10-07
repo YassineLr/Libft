@@ -15,7 +15,7 @@ t_list	*ft_lstnew(void *content)
 int	main()
 {
 	char str[] = "yassine";
-	t_list	*t__t;
-	t__t = ft_lstnew(str);
-	printf("%s", t__t->content);
+	t_list	t__t;
+	t__t = *ft_lstnew(str);
+	printf("%s", t__t.content);
 }

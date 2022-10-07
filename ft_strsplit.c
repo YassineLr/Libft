@@ -43,7 +43,7 @@ char	**ft_strsplit(char const *s, char c)
 		k = 0;
 		while (s[i] != c)
 		{
-			array[j][k] = s[i]
+			array[j][k] = s[i];
 		}
 		
 	}
