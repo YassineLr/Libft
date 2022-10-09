@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 18:24:47 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/09 18:24:48 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/09 20:44:15 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,14 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	}
 	dest[i + len_dest] = '\0';
 	return (len_src + len_dest);
+}
+
+int main()
+{
+	int n;
+	char str[] = "yassine";
+	char str1[] = " larhrissi";
+	
+	n = ft_strlcat(str, str1, 8);
+	printf("n = %d\n", n);
 }

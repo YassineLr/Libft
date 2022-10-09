@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 18:19:23 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/09 20:30:45 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/09 20:57:40 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *src, const char *to_find, size_t n)
 
 	i = 0;
 	j = 0;
-	s = ft_strlen(to_find) + 1;
+	s = ft_strlen(to_find);
 	if (!to_find[j])
 		return ((char *)src);
 	while (src[i] && i < n)
@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *src, const char *to_find, size_t n)
 		if (src[i] == to_find[j])
 		{
 			j++;
-			while (src[i + j] == to_find[j])
+			while (src[i + j] == to_find[j] && i + j < n)
 				j++;
 			if (j == s)
 				return ((char *)src + i);
@@ -38,4 +38,3 @@ char	*ft_strnstr(const char *src, const char *to_find, size_t n)
 	}
 	return (NULL);
 }
-
