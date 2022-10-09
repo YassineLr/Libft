@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:25:44 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/07 20:36:59 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/09 15:51:32 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	s1 = (unsigned char *)dest;
 	s2 = (unsigned char *)src;
-	if (dest < src)
-	{
-		while (n)
-		{
+	if (s2 < s1)
+		while (n--)
 			*(s1 + n) = *(s2 + n);
-			n--;
-		}
-		return (dest);
-	}return (dest);
-}
-
-int	main(void)
-{
-	char	str[] = "yaasi";
-	char	str1[] = "larhrissi";
-
-	printf("With predifined memmove ------> %s\n", memmove(str, str1, 3));
-	printf("With my ft_memmove -----------> %s\n", ft_memmove(str, str1, 3));
+	else
+		ft_memcpy(dest, src, n);
+	return (dest);
 }

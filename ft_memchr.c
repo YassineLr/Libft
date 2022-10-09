@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:39:22 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/06 22:19:23 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/09 13:42:46 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*t__t;
 	unsigned char	tmp;
 
