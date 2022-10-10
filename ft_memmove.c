@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:25:44 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/09 15:51:32 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/10 02:37:10 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t			i;
 	unsigned char	*s1;
 	unsigned char	*s2;
 
