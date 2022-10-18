@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 00:25:49 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/18 03:41:21 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/18 03:52:40 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,25 @@ static int	ft_lcount(int i, char *str, char sep)
 		count++;
 		i++;
 	}
-	return (count + 1);
+	return (count);
 }
 
 static char	*ft_filling(char *t__t, char *str, char sep, int i)
 {
 	int	j;
 	int	k;
+	int	n;
 
 	j = 0;
 	k = 0;
-	t__t = (char *) malloc (ft_lcount(i, str - i, sep) * sizeof(char));
+	n = ft_lcount(i, str, sep);
+	t__t = (char *) malloc ((n + 1) * sizeof(char));
 	if (!t__t)
 		return (NULL);
-	while (str[j] && str[j] != sep)
+	while (str[i] && k < n)
 	{
-		t__t [k] = str [j];
-		j++;
+		t__t [k] = str [i];
+		i++;
 		k++;
 	}
 	t__t [k] = '\0';
@@ -84,7 +86,7 @@ char	**ft_split(char *str, char sep)
 			i++;
 		if (str[i] && str[i] != sep)
 		{
-			t__t [j] = ft_filling(t__t[j], str + i, sep, i);
+			t__t [j] = ft_filling(t__t[j], str, sep, i);
 			j++;
 		}
 		i += ft_lcount(i, str, sep);

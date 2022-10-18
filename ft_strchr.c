@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:14:33 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/18 02:48:48 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/18 04:06:55 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strchr(const char *str, int ch)
 	while (str[i])
 	{
 		if (str[i] == c)
-			return (t__t + i);
+			return ((char *)str + i);
 		i++;
 	}
 	return (NULL);
