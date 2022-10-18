@@ -6,13 +6,13 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 02:40:25 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/10 02:41:10 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/14 23:04:20 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int ch)
+int	ft_tolower(int ch)
 {
 	if (ch <= 'Z' && ch >= 'A')
 		return (ch + 32);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 18:19:12 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/09/09 18:19:12 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/10/18 03:14:20 by ylarhris          #+#    #+#             */
+/*   Updated: 2022/10/18 03:14:21 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	courant = *lst;
 	while (courant)
 	{
-		ft_lstdelone(courant,del);
+		ft_lstdelone(courant, del);
 		courant = courant->next;
 	}
 }

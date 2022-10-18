@@ -1,90 +1,94 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/15 00:25:49 by ylarhris          #+#    #+#             */
+/*   Updated: 2022/10/18 03:41:21 by ylarhris         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_wdcount(const char *s, char c)
+static int	ft_wdcount(char *str, char c)
 {
 	int	i;
 	int	count;
 
-	i = 0;
 	count = 0;
-	while (s[i] != '\0')
+	i = 0;
+	while (str[i] == c)
+		i++;
+	while (str[i])
 	{
-		if (s[i] == c)
-		{
-			i++;
-		}
-		else
-		{
+		if (str[i + 1] == '\0' || (str[i] == c && str[i + 1] != c))
 			count++;
-			while (s[i] != c && s[i] != '\0')
-			{
-				i++;
-			}
-		}
+		i++;
 	}
 	return (count);
 }
 
-char	*ft_strxdup(const char *s, char c, int *x)
+static int	ft_lcount(int i, char *str, char sep)
 {
-	int		len;
-	int		i;
-	char	*str;
+	int	count;
 
-	len = 0;
-	while (s[*x] == c)
-		*x = *x + 1;
-	i = *x;
-	while (s[i] != '\0' && s[i] != c)
+	count = 0;
+	while (str[i] == sep)
+		i++;
+	while (str[i] && str[i] != sep)
 	{
-		len++;
+		count++;
 		i++;
 	}
-	str = (char *)malloc((len + 1) * sizeof(char));
+	return (count + 1);
+}
+
+static char	*ft_filling(char *t__t, char *str, char sep, int i)
+{
+	int	j;
+	int	k;
+
+	j = 0;
+	k = 0;
+	t__t = (char *) malloc (ft_lcount(i, str - i, sep) * sizeof(char));
+	if (!t__t)
+		return (NULL);
+	while (str[j] && str[j] != sep)
+	{
+		t__t [k] = str [j];
+		j++;
+		k++;
+	}
+	t__t [k] = '\0';
+	return (t__t);
+}
+
+char	**ft_split(char *str, char sep)
+{
+	int		i;
+	int		j;
+	char	**t__t;
+
+	i = 0;
+	j = 0;
 	if (!str)
-		return (0);
-	i = 0;
-	while (s[*x] != '\0' && s[*x] != c)
+		return (NULL);
+	t__t = (char **) malloc ((ft_wdcount(str, sep) + 1) * sizeof(char *));
+	if (!t__t)
+		return (NULL);
+	while (str[i] && j < ft_wdcount(str, sep))
 	{
-		str[i++] = s[*x];
-		*x = *x + 1;
+		while (str[i] == sep)
+			i++;
+		if (str[i] && str[i] != sep)
+		{
+			t__t [j] = ft_filling(t__t[j], str + i, sep, i);
+			j++;
+		}
+		i += ft_lcount(i, str, sep);
 	}
-	str[i] = '\0';
-	return (str);
-}
-
-char	**ft_handle_err(char **strs)
-{
-	size_t	i;
-
-	i = 0;
-	while (strs[i])
-		free(strs[i++]);
-	free(strs);
-	return (NULL);
-}
-
-char	**ft_split(const char *s, char c)
-{
-	int		i;
-	int		x;
-	int		len;
-	char	**strs;
-
-	i = 0;
-	if (!s)
-		return (0);
-	len = ft_wdcount(s, c);
-	strs = (char **)malloc((len + 1) * sizeof(char *));
-	if (!strs)
-		return (0);
-	while (i < len)
-	{
-		strs[i] = ft_strxdup(s, c, &x);
-		if (!strs[i])
-			return (ft_handle_err(strs));
-		i++;
-	}
-	strs[i] = 0;
-	return (strs);
+	t__t[j] = NULL;
+	return (t__t);
 }

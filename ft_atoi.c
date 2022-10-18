@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:35:23 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/09 23:00:35 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/16 16:06:20 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *s)
 {
-	int	res;
-	int	i;
-	int	sign;
+	int				res;
+	int				i;
+	unsigned int	sign;
 
 	res = 0;
 	sign = 1;

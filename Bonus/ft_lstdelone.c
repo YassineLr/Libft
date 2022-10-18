@@ -5,19 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 17:53:46 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/09/09 17:53:46 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/10/18 03:14:31 by ylarhris          #+#    #+#             */
+/*   Updated: 2022/10/18 03:28:59 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	del(void *t__t)
-{
-	free(t__t->content);
-}
-
-void	ft_lstdelone(t_list *lst, void(*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	t_list	*courant;
 

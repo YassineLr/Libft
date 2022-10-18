@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 18:55:28 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/09/09 18:55:28 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/10/18 03:15:48 by ylarhris          #+#    #+#             */
+/*   Updated: 2022/10/18 03:16:05 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void*(*f)(void*), void (*del)(void*))
 		}
 		courant1 = ft_lstnew((*f)(courant->content));
 		ft_lstadd_back(&t__t, courant1);
-		courant = courant -> next; 
+		courant = courant -> next;
 	}
-	return(t__t);
+	return (t__t);
 }

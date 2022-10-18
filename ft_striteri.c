@@ -1,48 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 20:44:02 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/17 01:08:21 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/10/14 18:15:57 by ylarhris          #+#    #+#             */
+/*   Updated: 2022/10/18 02:49:41 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_check(const char *str, int ch, int i)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	c;
-
-	c = (char)ch;
-	while (str[i])
-	{
-		if (str[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-char	*ft_strrchr(const char *str, int ch)
-{
-	char	c;
-	int		i;
+	size_t	i;
+	size_t	n;
 
 	i = 0;
-	c = (char)ch;
-	if (ch == '\0')
-		return ((char *)str + ft_strlen(str));
-	while (str[i])
+	n = ft_strlen(s);
+	while (i < n)
 	{
-		if (str[i] == c)
-		{
-			if (ft_check(str, c, i + 1) == 0)
-				return ((char *)str + i);
-		}
+		f(i, s++);
 		i++;
 	}
-	return (NULL);
 }
