@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 16:35:23 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/18 14:44:24 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/10/18 03:15:36 by ylarhris          #+#    #+#             */
+/*   Updated: 2022/10/18 18:27:27 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int				res;
-	int				i;
-	unsigned int	sign;
-	long			rer;
+	t_list	*courant;
 
-	res = 0;
-	rer = 0;
-	sign = 1;
-	i = 0;
-	while (s[i] == 32 || (s[i] <= 13 && s[i] >= 9))
-		i++;
-	if (s[i] == '-')
-	{
-		sign *= (-1);
-		i++;
-	}
-	else if (s[i] == '+')
-		i++;
-	while (s[i] <= '9' && s[i] >= '0')
-	{
-		res = res * 10;
-		res = res + s[i] - 48;
-		i++;
-	}
-	return (sign * res);
+	if (!lst)
+		return (NULL);
+	courant = lst;
+	while (courant -> next)
+		courant = courant -> next;
+	return (courant);
 }

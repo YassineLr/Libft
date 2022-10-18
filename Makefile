@@ -10,7 +10,13 @@ SRCS = ft_strchr.c ft_strlen.c ft_putchar_fd.c \
       ft_strmapi.c ft_tolower.c ft_toupper.c \
       ft_split.c 
 
+BSRC = ft_lstnew.c ft_lstadd_back.c ft_lstadd_front.c \
+	ft_lstdelone.c ft_lstclear.c ft_lstlast.c \
+      ft_lstsize.c ft_lstiter.c
+
 OBJS = ${SRCS:.c=.o}
+
+BOBJ = ${BSRC:.c=.o}
 
 CC = cc
 
@@ -18,16 +24,19 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
-.c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+%.o:%.c
+	@${CC} ${CFLAGS} -c $< -o $@
 
 all: ${NAME}
 	
 ${NAME}: ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
+bonus: ${NAME} ${BOBJ}
+	ar rcs ${NAME} ${BOBJ}
+
 clean:
-	rm -rf ${OBJS}
+	rm -rf ${OBJS} ${BOBJ}
 
 fclean: clean
 	rm -rf ${NAME}

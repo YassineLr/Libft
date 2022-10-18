@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 00:25:49 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/18 03:52:40 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/18 19:16:15 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	**ft_split(char *str, char sep)
 	{
 		while (str[i] == sep)
 			i++;
-		if (str[i] && str[i] != sep)
+		if (str[i] != sep)
 		{
 			t__t [j] = ft_filling(t__t[j], str, sep, i);
 			j++;
