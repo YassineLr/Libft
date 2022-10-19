@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 03:14:31 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/18 15:39:37 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/19 02:18:39 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	t_list	*courant;
-
-	courant = lst;
-	while (courant)
-	{
-		(*del)(courant->content);
-		courant = courant -> next;
-	}
+	if (!lst)
+		return ;
+	if (del)
+		del(lst->content);
+	free(lst);
 }
