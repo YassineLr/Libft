@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:15:14 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/18 04:03:11 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:26:28 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strdup(const char *src)
 	dest = (char *)malloc (n * sizeof(char));
 	if (!dest)
 		return (NULL);
-	while (i < n)
+	while (src[i])
 	{
 		dest[i] = src[i];
 		i++;

@@ -6,43 +6,24 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:44:02 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/18 18:37:04 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/19 21:12:38 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_check(const char *str, int ch, int i)
-{
-	char	c;
-
-	c = (char)ch;
-	while (str[i])
-	{
-		if (str[i] == (const char)c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 char	*ft_strrchr(const char *str, int ch)
 {
-	char	c;
-	int		i;
+	int	n;
 
-	i = 0;
-	c = (char)ch;
-	if (ch == '\0')
-		return ((char *)str + ft_strlen(str));
-	while (str[i])
+	n = ft_strlen(str);
+	if (!str)
+		return (NULL);
+	while (n >= 0)
 	{
-		if (str[i] == c)
-		{
-			if (ft_check(str, c, i + 1) == 0)
-				return ((char *)str + i);
-		}
-		i++;
+		if (str[n] == (const char)ch)
+			return ((char *)str + n);
+		n--;
 	}
 	return (NULL);
 }
