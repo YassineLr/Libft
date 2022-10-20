@@ -6,12 +6,11 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:35:23 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/20 16:17:42 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/20 18:01:44 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<limits.h>
 
 int	ft_atoi(const char *s)
 {
@@ -27,6 +26,7 @@ int	ft_atoi(const char *s)
 	if (s[i] == '-')
 	{
 		sign *= (-1);
+		res = -res;
 		i++;
 	}
 	else if (s[i] == '+')

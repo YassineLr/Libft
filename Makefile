@@ -25,7 +25,7 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
 %.o:%.c
-	@${CC} ${CFLAGS} -c $< -o $@
+	${CC} ${CFLAGS} -c $< -o $@
 
 all: ${NAME}
 	

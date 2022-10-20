@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:15:14 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/19 20:26:28 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/20 20:34:37 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,3 @@ char	*ft_strdup(const char *src)
 	dest[i] = '\0';
 	return (dest);
 }
-
-// int main()
-// {
-// 	char str[] = "";
-// 	printf("------>%s\n",strdup(str));
-// 	printf("------>%s\n",ft_strdup(str));
-// }
