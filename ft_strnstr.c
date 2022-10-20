@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 18:19:23 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/18 03:09:59 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:59:10 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ char	*ft_strnstr(const char *src, const char *to_find, size_t n)
 
 	i = 0;
 	j = 0;
-	if (src[i] == '\0')
+	if (ft_strlen(to_find) > ft_strlen(src))
 		return (NULL);
-	else if (n == 0 && to_find[j] == '\0')
+	if (n == 0 && to_find[j] == '\0')
 		return ((char *)src);
 	else if (n == 0)
 		return (NULL);
-	if (to_find[j] == '\0')
+	else if (to_find[j] == '\0')
 		return ((char *)src);
 	while (src[i + j] && i + j < n)
 	{

@@ -6,21 +6,20 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:35:23 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/18 14:44:24 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:17:42 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include<limits.h>
 
 int	ft_atoi(const char *s)
 {
-	int				res;
-	int				i;
-	unsigned int	sign;
-	long			rer;
+	int	res;
+	int	i;
+	int	sign;
 
 	res = 0;
-	rer = 0;
 	sign = 1;
 	i = 0;
 	while (s[i] == 32 || (s[i] <= 13 && s[i] >= 9))
