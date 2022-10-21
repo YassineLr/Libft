@@ -125,7 +125,7 @@ shell
 $ make bonus
 
 
-*2. Cleaning all binary (.o) and executable files (.a)*
+~~2. Cleaning all binary (.o) and executable files (.a)~~
 
 To clean all files generated while doing a make, go to the path and run:
 
