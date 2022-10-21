@@ -109,7 +109,7 @@ The library is written in C language and needs the *`gcc` compiler* and some sta
 
 ### Instructions
 
-<h2 *1. Compiling the library* </h2>
+ *1. Compiling the library*
 
 To compile the library, go to its path and run:
 
@@ -125,7 +125,7 @@ shell
 $ make bonus
 
 
-<h2 *2. Cleaning all binary (.o) and executable files (.a)* </h2>
+**2. Cleaning all binary (.o) and executable files (.a)**
 
 To clean all files generated while doing a make, go to the path and run:
 
@@ -133,7 +133,7 @@ shell
 $ make fclean
 
 
-<h2 *3. Using it in your code* </h2>
+ *3. Using it in your code* </h2>
 
 To use the library functions in your code, simply include its header:
 
