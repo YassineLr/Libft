@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:36:45 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/14 01:42:06 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/21 16:20:35 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*t__t;
+	void	*new;
 
-	t__t = malloc(count * size);
-	if (!t__t)
+	new = malloc(count * size);
+	if (!new)
 		return (0);
-	ft_bzero(t__t, count * size);
-	return (t__t);
+	ft_bzero(new, count * size);
+	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 00:25:49 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/20 18:44:30 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/21 17:39:17 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ char	**ft_split(char *str, char sep)
 {
 	int		i;
 	int		j;
-	char	**t__t;
+	char	**s_str;
 
 	i = 0;
 	j = 0;
 	if (!str)
 		return (NULL);
-	t__t = (char **) malloc ((ft_wdcount(str, sep) + 1) * sizeof(char *));
-	if (!t__t)
+	s_str = (char **) malloc ((ft_wdcount(str, sep) + 1) * sizeof(char *));
+	if (!s_str)
 		return (NULL);
 	while (str[i] && j < ft_wdcount(str, sep))
 	{
@@ -86,11 +86,11 @@ char	**ft_split(char *str, char sep)
 			i++;
 		if (str[i] != sep)
 		{
-			t__t [j] = ft_filling(t__t[j], str, sep, i);
+			s_str [j] = ft_filling(s_str[j], str, sep, i);
 			j++;
 		}
 		i += ft_lcount(i, str, sep);
 	}
-	t__t[j] = NULL;
-	return (t__t);
+	s_str[j] = NULL;
+	return (s_str);
 }

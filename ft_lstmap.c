@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 03:15:48 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/20 16:38:03 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/21 16:18:36 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 t_list	*ft_lstmap(t_list *lst, void*(*f)(void*), void (*del)(void*))
 {
-	t_list	*t__t;
+	t_list	*l_new;
 	t_list	*courant;
 
-	t__t = NULL;
+	l_new = NULL;
 	while (lst != NULL)
 	{
-		if (t__t == NULL)
-			t__t = ft_lstnew((*f)(lst->content));
+		if (l_new == NULL)
+			l_new = ft_lstnew((*f)(lst->content));
 		else
 		{
 			courant = ft_lstnew((*f)(lst->content));
 			if (!courant)
 			{
-				ft_lstclear(&t__t, del);
+				ft_lstclear(&l_new, del);
 				return (NULL);
 			}
 			else
-				ft_lstadd_back(&t__t, courant);
+				ft_lstadd_back(&l_new, courant);
 		}
 		lst = lst -> next;
 	}
-	return (t__t);
+	return (l_new);
 }

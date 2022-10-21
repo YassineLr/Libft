@@ -6,13 +6,13 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:38:24 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/19 21:26:09 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/21 17:48:08 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned long long	min(unsigned long long a, unsigned long long b)
+unsigned long	min(unsigned long a, unsigned long b)
 {
 	if (a < b)
 		return (a);
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	size_t	n;
-	char	*t__t;
+	char	*sub;
 
 	i = 0;
 	if (!s)
@@ -32,14 +32,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	else
 		n = min(ft_strlen(s) - start, len);
-	t__t = (char *)malloc((n + 1) * sizeof(char));
-	if (!t__t)
+	sub = (char *)malloc((n + 1) * sizeof(char));
+	if (!sub)
 		return (NULL);
 	while (s[start + i] && i < len)
 	{
-		t__t[i] = s[start + i];
+		sub[i] = s[start + i];
 		i++;
 	}
-	t__t[i] = '\0';
-	return (t__t);
+	sub[i] = '\0';
+	return (sub);
 }

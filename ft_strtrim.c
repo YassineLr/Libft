@@ -6,13 +6,13 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 02:40:03 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/14 20:54:08 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/21 16:10:22 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcchr(const char *s, char c)
+static int	ft_strcchr(const char *s, char c)
 {
 	int	i;
 

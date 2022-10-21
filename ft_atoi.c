@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:35:23 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/20 18:01:44 by ylarhris         ###   ########.fr       */
+/*   Updated: 2022/10/21 16:21:30 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ int	ft_atoi(const char *s)
 		i++;
 	if (s[i] == '-')
 	{
-		sign *= (-1);
-		res = -res;
+		sign = -1;
 		i++;
 	}
 	else if (s[i] == '+')
