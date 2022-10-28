@@ -107,38 +107,15 @@ For more detailed information, look at the [*subject of this project*](https://g
 
 The library is written in C language and needs the *`gcc` compiler* and some standard *C libraries* to run.
 
-### Instructions
+* Usage:
 
-> *1. Compiling the library*
+The makefile compiles all files from the ``src/``, ``srcb/`` or ``srca/`` folders and saves the object files to the ``obj/``, ``objb/`` and ``obja/`` folders. It then generates the output file ``libft.a`` inside the ``bin/`` folder. Here are some of the commands you can try:
 
-To compile the library, go to its path and run:
-
-For all mandatory functions:
-
-shell
-$ make
-
-
-For bonus functions:
-
-shell
-$ make bonus
-
-
-> 2. Cleaning all binary (.o) and executable files (.a)
-
-To clean all files generated while doing a make, go to the path and run:
-
-shell
-$ make fclean
-
-
- > *3. Using it in your code* </h2>
-
-To use the library functions in your code, simply include its header:
-
-C
-#include "libft.h"
+```
+make all		Compiles the libft.a file
+make bonus		Compiles all bonus files instead of the mandatory ones
+make norminette		Checks Norm for all .c and .h files in the libft/ folder	
+```
 
 
 ## 📋 Testing
