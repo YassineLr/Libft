@@ -116,9 +116,6 @@ make all		Compiles the libft.a file
 make bonus		Compiles all bonus files instead of the mandatory ones
 make norminette		Checks Norm for all .c and .h files in the libft/ folder	
 ```
-## Summary
-Really enjoyed this first project, can't wait for the next one :wink:
-
 
 ## 📋 Testing
 
@@ -128,3 +125,7 @@ You can use any of this third party testers to test the project
 * [Tripouille/libfTester](https://github.com/Tripouille/libftTester)
 * [ska42/libft-war-machine](https://github.com/ska42/libft-war-machine)
 * [alelievr/libft-unit-test](https://github.com/alelievr/libft-unit-test)
+
+## Summary
+Really enjoyed this first project, can't wait for the next one :wink:
+
